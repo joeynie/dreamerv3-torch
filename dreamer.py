@@ -193,6 +193,11 @@ def make_env(config, mode, id):
 
         env = minecraft.make_env(task, size=config.size, break_speed=config.break_speed)
         env = wrappers.OneHotAction(env)
+    elif suite == "custom":
+        from envs.custom import CustomEnv
+
+        env = CustomEnv(game_name=task)
+        env = wrappers.NormalizeActions(env)
     else:
         raise NotImplementedError(suite)
     env = wrappers.TimeLimit(env, config.time_limit)
