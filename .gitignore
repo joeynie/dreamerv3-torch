@@ -1,6 +1,7 @@
 #
 run*
 logdir*
+logs*
 vis_*
 result*
 

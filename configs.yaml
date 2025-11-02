@@ -1,6 +1,6 @@
 defaults:
 
-  logdir: null
+  logdir: "./logdir"
   traindir: null
   evaldir: null
   offline_traindir: ''
@@ -148,8 +148,8 @@ atari100k:
 minecraft:
   task: minecraft_diamond
   step: 1e8
-  parallel: True
-  envs: 16
+  parallel: False
+  envs: 1
   # no eval
   eval_episode_num: 0
   eval_every: 1e4
@@ -167,7 +167,7 @@ minecraft:
   cont_head: {layers: 5}
   imag_gradient: 'reinforce'
   break_speed: 100.0
-  time_limit: 36000
+  time_limit: 5000 #36000
 
 memorymaze:
   steps: 1e8

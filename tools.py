@@ -174,6 +174,7 @@ def simulate(
         else:
             action = np.array(action)
         assert len(action) == len(envs)
+        print(f"Step: {step}, Action: {action}")
         # step envs
         results = [e.step(a) for e, a in zip(envs, action)]
         results = [r() for r in results]
